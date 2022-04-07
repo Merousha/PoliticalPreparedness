@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.udacity.example.politicalpreparedness.election.ElectionsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context="com.udacity.example.politicalpreparedness.MainActivity">
+
+        <TextView
+            android:id="@+id/upcoming_elections_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/upcoming_elections_header"
+            android:fontFamily="@font/arima_madurai_bold"
+            android:padding="@dimen/default_padding"
+            android:singleLine="true"
+            android:text="@string/upcoming_elections_header"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/center_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem[31]" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/upcoming_refresh"
+            refreshing="@{viewModel.dataLoading}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/center_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_elections_header">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/upcoming_elections_recycler"
+                listData="@{viewModel.upcomingElections}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:id="@+id/upcoming_status_image"
+            showError="@{viewModel.upcomingElections.size()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/imageview_min"
+            android:minHeight="@dimen/imageview_min"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/center_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_elections_header"
+            app:tint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/saved_elections_header"
+            setVisible="@{viewModel.savedElections.size()}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:contentDescription="@string/saved_elections_header"
+            android:fontFamily="@font/arima_madurai_bold"
+            android:padding="@dimen/default_padding"
+            android:singleLine="true"
+            android:text="@string/saved_elections_header"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/center_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem[31]" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/saved_elections_recycler"
+            listData="@{viewModel.savedElections}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/center_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/saved_elections_header" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

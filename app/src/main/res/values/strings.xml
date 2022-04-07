@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Political Preparedness</string>
+    <string name="representatives_button">Find my representatives</string>
+    <string name="upcoming_elections">Upcoming elections</string>
+    <string name="launch_logo_description">Home screen logo</string>
+    <string name="election_name">%s</string>
+    <string name="upcoming_elections_header">Upcoming elections</string>
+    <string name="saved_elections_header">Saved elections</string>
+    <string name="voter_remove_from_saved">Unfollow election</string>
+    <string name="voter_add_to_saved">Follow election</string>
+    <string name="voting_location">&lt;a href="%s">Voting locations&lt;/a></string>
+    <string name="ballot_information">&lt;a href="%s">Ballot information&lt;/a></string>
+    <string name="address">Address</string>
+    <string name="error_failed_load_voter_info">Failed to load details using your location information</string>
+    <string name="error_failed_get_address_from_location">Can\'t get address for you location</string>
+    <string name="error_location_permission_denied">Location permission denied!</string>
+    <string name="error_failed_load_upcoming_elections">Failed to load upcoming elections</string>
+    <string name="representative_search">Representative Search</string>
+    <string name="address_line_1_hint">Address Line 1</string>
+    <string name="address_line_2_hint">Address Line 2</string>
+    <string name="city_hint">City</string>
+    <string name="zip">Zip</string>
+    <string name="find_my_representatives">Find my representatives</string>
+    <string name="use_my_location">Use my location</string>
+    <string name="my_representatives_header">My Representatives</string>
+    <string name="error_missing_first_line_address">Enter first line address</string>
+    <string name="error_missing_city">Enter city</string>
+    <string name="error_missing_state">State field is required</string>
+    <string name="error_missing_zip">Enter zip code</string>
+    <string name="representative_no">%s from %s</string>
+    <string name="representative_fb">%s facebook page</string>
+    <string name="representative_twitter">%s twitted</string>
+    <string name="representative_www">%s web page</string>
+
+</resources>

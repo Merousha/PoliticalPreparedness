@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="layout_width">54dp</dimen>
+    <dimen name="layout_height">54dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="photo_width">64dp</dimen>
+    <dimen name="photo_height">64dp</dimen>
+    <dimen name="tv_margin">8dp</dimen>
+    <dimen name="imageview_width">48dp</dimen>
+    <dimen name="imageview_height">48dp</dimen>
+    <dimen name="imageview_margin">8dp</dimen>
+    <dimen name="imageview_min">100dp</dimen>
+    <dimen name="guideline_height">1dp</dimen>
+    <dimen name="textsize">18sp</dimen>
+    <dimen name="header_textsize">18sp</dimen>
+    <dimen name="button_margin">8dp</dimen>
+</resources>
